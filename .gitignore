@@ -37,3 +37,5 @@ sysinfo.txt
 *.apk
 *.unitypackage
 Assets/Plugins.meta
+
+Assets/Tree_Textures/translucency_gloss.png
