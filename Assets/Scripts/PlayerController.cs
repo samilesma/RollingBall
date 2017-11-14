@@ -4,7 +4,8 @@ using UnityEngine.UI;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-
+    public int forceConst = 5;
+    private bool isGrounded = true;
     public float speed;
     public Text countText;
     public Text winText;
@@ -46,6 +47,32 @@ public class PlayerController : MonoBehaviour {
         if (count >= 12)
         {
             winText.text= "You win!";
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Entered");
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        Debug.Log("Exited");
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+        }
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            rb.AddForce(0, forceConst, 0, ForceMode.Impulse);
         }
     }
 }
