@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
     public int forceConst = 5;
-    private bool isGrounded = true;
     public float speed;
     public Text countText;
     public Text winText;
+    public float maxSpeed;
 
     private int count;
     private Rigidbody rb;
+    private bool spacedown=false;
+    private bool isGrounded = true;
 
     private void Start()
     {
@@ -28,7 +31,11 @@ public class PlayerController : MonoBehaviour {
 
         Vector3 movement = new Vector3(moveHorizontal, 0, moveVertical);
 
-        rb.AddForce(movement*speed);
+        if (rb.velocity.magnitude > maxSpeed) rb.velocity = rb.velocity.normalized * maxSpeed;
+        rb.AddForce(movement * speed);
+
+        if (GameObject.Find("Player").transform.position.y<-1) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        if(spacedown && isGrounded) rb.AddForce(0, forceConst, 0, ForceMode.Impulse);
     }
 
     void OnTriggerEnter(Collider other)
@@ -70,9 +77,9 @@ public class PlayerController : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
-        {
-            rb.AddForce(0, forceConst, 0, ForceMode.Impulse);
-        }
+        if (Input.GetKeyDown(KeyCode.Space)) spacedown = true;
+        else if(Input.GetKeyUp(KeyCode.Space)) spacedown = false;
+
+        if (Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
