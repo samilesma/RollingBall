@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour {
     public int forceConst = 5;
     private bool isGrounded = true;
     public float speed;
+	public int jump = 5;
     public Text countText;
     public Text winText;
 
