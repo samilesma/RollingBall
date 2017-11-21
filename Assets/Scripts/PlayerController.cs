@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour {
     public int forceConst = 5;
     public float speed;
+	public int jump = 5;
     public Text countText;
     public Text winText;
     public Text jumpText;
