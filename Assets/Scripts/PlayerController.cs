@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour {
     public float speed;
     public Text countText;
     public Text winText;
+    public Text jumpText;
 
     private int count;
     private Rigidbody rb;
@@ -48,6 +49,11 @@ public class PlayerController : MonoBehaviour {
         {
             winText.text= "You win!";
         }
+    }
+
+    void setJumpText()
+    {
+        jumpText.text = "Press space to jump";
     }
 
     void OnCollisionEnter(Collision collision)
