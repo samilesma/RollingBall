@@ -8,6 +8,7 @@ public class MovingWalls : MonoBehaviour {
     public float max = 3f;
     public int distance = 3;
 	public char pos;
+	public int speed = 2;
     // Use this for initialization
     void Start()
     {
@@ -29,13 +30,13 @@ public class MovingWalls : MonoBehaviour {
     void Update()
     {
 		if (pos == 'y') {
-			transform.position = new Vector3(transform.position.x, Mathf.PingPong(Time.time * 2, max - min) + min, transform.position.z);
+			transform.position = new Vector3(transform.position.x, Mathf.PingPong(Time.time * speed, max - min) + min, transform.position.z);
 		} 
 		else if (pos == 'x') {
-			transform.position = new Vector3( Mathf.PingPong(Time.time * 2, max - min) + min , transform.position.y, transform.position.z);
+			transform.position = new Vector3( Mathf.PingPong(Time.time * speed, max - min) + min , transform.position.y, transform.position.z);
 		} 
 		else if (pos == 'z') {
-			transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.PingPong(Time.time * 2, max - min) + min);
+			transform.position = new Vector3(transform.position.x, transform.position.y, Mathf.PingPong(Time.time * speed, max - min) + min);
 		}
     }
 
