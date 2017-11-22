@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2169f49cb6cd4367b0b394a33a57dae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpPad: 10
+  jumpPad: 5
 --- !u!65 &67247840
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -345,7 +345,7 @@ MonoBehaviour:
   max: 3
   distance: 3
   pos: 120
-  speed: 0
+  speed: 1
 --- !u!23 &721976201
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -471,8 +471,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   forceConst: 6
-  speed: 11
-  jump: 5
+  speed: 5
+  jump: 3
   countText: {fileID: 0}
   winText: {fileID: 0}
   jumpText: {fileID: 0}
@@ -1153,7 +1153,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1368478694}
   m_LocalRotation: {x: 0.38268343, y: -0, z: -0, w: 0.92387956}
-  m_LocalPosition: {x: 0.72, y: 16.94, z: -31.02}
+  m_LocalPosition: {x: 0.72, y: 10.02, z: -31.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1502,7 +1502,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1829364431}
   m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 3.95, y: 4.68, z: -15.06}
+  m_LocalPosition: {x: 3.95, y: 5.29, z: -15.06}
   m_LocalScale: {x: 4, y: 11.485236, z: 5}
   m_Children: []
   m_Father: {fileID: 968648148}
