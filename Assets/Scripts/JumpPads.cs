@@ -20,7 +20,7 @@ public class JumpPads : MonoBehaviour {
 		if(other.gameObject.CompareTag("player"))
 		{
 			other.attachedRigidbody.AddForce(0, jumpPad, 0, ForceMode.Impulse);
-			transform.localScale += new Vector3 (20.3f,0.3f ,0.3f)*Time.deltaTime*200;
+			transform.localScale += new Vector3 (20.3f,0.3f ,0.3f)*Time.deltaTime*2;
 
 		}
 	}
