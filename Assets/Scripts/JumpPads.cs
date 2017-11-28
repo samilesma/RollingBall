@@ -16,14 +16,17 @@ public class JumpPads : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-
 		if(other.gameObject.CompareTag("player"))
 		{
 			other.attachedRigidbody.AddForce(0, jumpPad, 0, ForceMode.Impulse);
-			transform.localScale += new Vector3 (20.3f,0.3f ,0.3f)*Time.deltaTime*2;
-
+			StartCoroutine(jumppad());
 		}
 	}
-
-
+	
+	IEnumerator jumppad()
+    {
+		transform.localScale += new Vector3 (0.5f,0.2f,0.2f);
+        yield return new WaitForSeconds(0.1f);
+		transform.localScale -= new Vector3 (0.5f,0.2f,0.2f);
+    }
 }
