@@ -10,12 +10,12 @@ public class PlayerController : MonoBehaviour {
 	public int jump = 5;
     public Text countText;
     public Text winText;
-    public Text jumpText;
     public float maxSpeed;
-    private int count;
+    public int count;
     private Rigidbody rb;
     private bool spacedown=false;
     private bool isGrounded = true;
+    public string scene; 
 
     private void Start()
     {
@@ -52,15 +52,17 @@ public class PlayerController : MonoBehaviour {
     void setCountText()
     {
         countText.text = "Count: " + count.ToString();
-        if (count >= 12)
-        {
-            winText.text= "You win!";
-        }
-    }
 
-    void setJumpText()
-    {
-        jumpText.text = "Press space to jump";
+        scene = SceneManager.GetActiveScene().name;
+
+        if (scene.Equals("Level zirt"))
+        {
+            if (count >= 8)
+            {
+                winText.text = "YOU WIN!";
+                SceneManager.LoadScene("Level 0");
+            }
+        }
     }
 
     void OnCollisionEnter(Collision collision)
