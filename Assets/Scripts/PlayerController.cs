@@ -15,7 +15,8 @@ public class PlayerController : MonoBehaviour {
     private Rigidbody rb;
     private bool spacedown=false;
     private bool isGrounded = true;
-    public string scene; 
+    public string scene;
+
 
     private void Start()
     {
@@ -67,6 +68,7 @@ public class PlayerController : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
+
         Debug.Log("Entered");
         if (collision.gameObject.CompareTag("Ground"))
         {
