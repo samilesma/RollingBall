@@ -5,12 +5,10 @@ using UnityEngine;
 public class JumpPads : MonoBehaviour {
 
 	public float jumpPad = 10;
-	private Rigidbody rb;
 	private Vector3 temp;
 
 	private void Start()
 	{
-		rb = GetComponent<Rigidbody>();
 
 	}
 
