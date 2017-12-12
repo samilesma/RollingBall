@@ -8,6 +8,8 @@ TagManager:
   - Ground
   - JumpPad
   - player
+  - Ball
+  - Portal
   layers:
   - Default
   - TransparentFX

@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour {
     public Text winText;
     public float maxSpeed;
     public int count;
+    public Renderer rend;
     private Rigidbody rb;
     private bool spacedown=false;
     private bool isGrounded = true;
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour {
 
     private void Start()
     {
+        rend = GetComponent<Renderer>();
         rb = GetComponent<Rigidbody>();
         count = 0;
         setCountText();
@@ -45,6 +47,9 @@ public class PlayerController : MonoBehaviour {
         if(other.gameObject.CompareTag("Pick Up"))
         {
             other.gameObject.SetActive(false);
+            GameObject portal = GameObject.Find("EndSpot");
+            Portal portalScript = portal.GetComponent<Portal>();
+            portalScript.pickup++;
             count++;
             setCountText();
         }
