@@ -13,11 +13,12 @@ public class PlayerController : MonoBehaviour {
     public float maxSpeed;
     public int count;
     public Renderer rend;
-    private Rigidbody rb;
+    public Rigidbody rb;
+    public int level = 0;
     private bool spacedown=false;
     private bool isGrounded = true;
     public string scene;
-
+    public bool movement = true;
 
     private void Start()
     {
@@ -30,13 +31,16 @@ public class PlayerController : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
+        if (movement)
+        {
+            float moveHorizontal = Input.GetAxis("Horizontal");
+            float moveVertical = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(moveHorizontal, 0, moveVertical);
+            Vector3 movement = new Vector3(moveHorizontal, 0, moveVertical);
 
-        if (rb.velocity.magnitude > maxSpeed) rb.velocity = rb.velocity.normalized * maxSpeed;
-        rb.AddForce(movement * speed);
+            if (rb.velocity.magnitude > maxSpeed) rb.velocity = rb.velocity.normalized * maxSpeed;
+            rb.AddForce(movement * speed);
+        }
 
         if (GameObject.Find("Player").transform.position.y<-1) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         if(spacedown && isGrounded) rb.AddForce(0, forceConst, 0, ForceMode.Impulse);
@@ -73,7 +77,6 @@ public class PlayerController : MonoBehaviour {
 
     void OnCollisionEnter(Collision collision)
     {
-
         Debug.Log("Entered");
         if (collision.gameObject.CompareTag("Ground"))
         {
