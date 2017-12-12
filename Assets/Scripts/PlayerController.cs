@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
     public int forceConst = 5;
-    public float speed;
+    public float speed=11;
 	public int jump = 5;
     public Text countText;
     public Text winText;
-    public float maxSpeed;
+    public float maxSpeed=50;
     public int count;
     public Renderer rend;
     public Rigidbody rb;
@@ -19,14 +19,18 @@ public class PlayerController : MonoBehaviour {
     private bool isGrounded = true;
     public string scene;
     public bool movement = true;
+    private Portal portalScript;
+    public bool jumper = false;
 
     private void Start()
     {
         rend = GetComponent<Renderer>();
         rb = GetComponent<Rigidbody>();
         count = 0;
-        setCountText();
         winText.text = "";
+
+        GameObject portal = GameObject.Find("EndSpot");
+        portalScript = portal.GetComponent<Portal>();
     }
 
     private void FixedUpdate()
@@ -43,41 +47,21 @@ public class PlayerController : MonoBehaviour {
         }
 
         if (GameObject.Find("Player").transform.position.y<-1) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        if(spacedown && isGrounded) rb.AddForce(0, forceConst, 0, ForceMode.Impulse);
+        if((spacedown || jumper) && isGrounded) rb.AddForce(0, forceConst, 0, ForceMode.Impulse);
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("Pick Up"))
+        if(other.gameObject.CompareTag("Pick Up")) 
         {
             other.gameObject.SetActive(false);
-            GameObject portal = GameObject.Find("EndSpot");
-            Portal portalScript = portal.GetComponent<Portal>();
             portalScript.pickup++;
             count++;
-            setCountText();
-        }
-    }
-
-    void setCountText()
-    {
-        countText.text = "Count: " + count.ToString();
-
-        scene = SceneManager.GetActiveScene().name;
-
-        if (scene.Equals("Level zirt"))
-        {
-            if (count >= 8)
-            {
-                winText.text = "YOU WIN!";
-                SceneManager.LoadScene("Level 0");
-            }
         }
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Entered");
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
@@ -86,7 +70,6 @@ public class PlayerController : MonoBehaviour {
 
     void OnCollisionExit(Collision collision)
     {
-        Debug.Log("Exited");
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
@@ -99,5 +82,11 @@ public class PlayerController : MonoBehaviour {
         else if(Input.GetKeyUp(KeyCode.Space)) spacedown = false;
 
         if (Input.GetKeyDown(KeyCode.R)) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void reset()
+    {
+        portalScript.pickup = 0;
+        count = 0;
     }
 }

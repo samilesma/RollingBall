@@ -625,7 +625,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71dc24cb064ab94a92fcb4d2407a05b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPickup: 12
+  maxPicks: 0c00000008000000
   pickup: 0
 --- !u!1 &799543801
 GameObject:
@@ -1566,7 +1566,11 @@ MonoBehaviour:
   winText: {fileID: 362247159}
   maxSpeed: 11
   count: 0
+  rend: {fileID: 0}
+  rb: {fileID: 0}
+  level: 0
   scene: 
+  movement: 1
 --- !u!54 &1429347059
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1708,6 +1712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1429347053}
+  active: 1
 --- !u!1001 &1586393783
 Prefab:
   m_ObjectHideFlags: 0

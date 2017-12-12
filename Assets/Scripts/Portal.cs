@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Portal : MonoBehaviour {
-    public int maxPickup = 10;
+    public int[] maxPicks = new int[] {12,8};
     public int pickup = 0;
 
     private Color colorStart = Color.red;
@@ -13,15 +13,24 @@ public class Portal : MonoBehaviour {
     private Renderer rend;
     private bool disco = false;
     private bool allowedPortal = true;
+    private PlayerController playerScript;
+    private CameraController cameraScript;
 
     void Start()
     {
         rend = GetComponent<Renderer>();
+
+        GameObject player = GameObject.Find("Player");
+        playerScript = player.GetComponent<PlayerController>();
+        GameObject camera = GameObject.Find("Main Camera");
+        cameraScript = camera.GetComponent<CameraController>();
     }
 
     void Update()
     {
-        if(pickup==maxPickup)
+        GameObject player = GameObject.Find("Player");
+        PlayerController playerScript = player.GetComponent<PlayerController>();
+        if (pickup==maxPicks[playerScript.level])
         {
             float lerp = Mathf.PingPong(Time.time, duration) / duration;
             rend.material.color = Color.Lerp(colorStart, colorEnd, lerp);
@@ -29,8 +38,6 @@ public class Portal : MonoBehaviour {
         if(disco)
         {
             float lerp = Mathf.PingPong(Time.time, duration) / duration;
-            GameObject player = GameObject.Find("Player");
-            PlayerController playerScript = player.GetComponent<PlayerController>();
             playerScript.rend.material.color = Color.Lerp(colorStart, colorEnd, lerp);
 
             playerScript.movement = false;
@@ -42,26 +49,19 @@ public class Portal : MonoBehaviour {
     IEnumerator portal()
     {
         allowedPortal = false;
-
         yield return new WaitForSeconds(1);
-
-        GameObject camera = GameObject.Find("Main Camera");
-        CameraController cameraScript = camera.GetComponent<CameraController>();
         cameraScript.active = false;
-
-        GameObject player = GameObject.Find("Player");
-        PlayerController playerScript = player.GetComponent<PlayerController>();
         playerScript.rb.AddForce(0, 100, 0, ForceMode.Impulse);
-
         yield return new WaitForSeconds(1);
-
         playerScript.level++;
-        SceneManager.LoadScene("Level " + playerScript.level, LoadSceneMode.Additive);
+        playerScript.reset();
+        SceneManager.LoadScene("Level " + playerScript.level);
+//        SceneManager.UnloadSceneAsync("Level " + (playerScript.level-1));
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Player" && pickup == maxPickup) disco = true;
+        if (collision.gameObject.name == "Player" && pickup == maxPicks[playerScript.level]) disco = true;
     }
 
     void OnCollisionExit(Collision collision)
