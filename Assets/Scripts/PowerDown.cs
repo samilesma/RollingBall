@@ -8,6 +8,7 @@ public class PowerDown : MonoBehaviour {
     private PlayerController playerScript;
     public enum Powers {SlowMotion, Speeder, SunShine, Darkness, Jumper, YouDead};
     public Powers power= Powers.SlowMotion;
+    public Text powerDown;
     private Renderer rend;
     private Light light;
 
@@ -27,26 +28,31 @@ public class PowerDown : MonoBehaviour {
             rend.enabled = false;
             if (power==Powers.SlowMotion)
             {
+                powerDown.text = "Slowmotion";
                 playerScript.speed = 1;
                 StartCoroutine(Delay(4));
             }
             else if(power==Powers.Speeder)
             {
+                powerDown.text = "Speedster";
                 playerScript.speed = 30;
                 StartCoroutine(Delay(4));
             }
             else if (power == Powers.SunShine)
             {
+                powerDown.text = "Sunshine";
                 light.intensity = 10;
                 StartCoroutine(Delay(4));
             }
             else if (power == Powers.Darkness)
             {
+                powerDown.text = "Darkness";
                 light.intensity = 0.1f;
                 StartCoroutine(Delay(4));
             }
             else if (power == Powers.Jumper)
             {
+                powerDown.text = "Jumper";
                 playerScript.jumper = true;
                 StartCoroutine(Delay(4));
             }
