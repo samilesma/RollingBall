@@ -8,6 +8,7 @@ public class CountDown : MonoBehaviour {
     //public float timeLeft = 30.0f;
     public int timeLeft = 10;
     public Text countDownText;
+    public bool gameEnded = false;
     // Use this for initialization
     void Start () {
         StartCoroutine("LoseTime");
@@ -31,7 +32,7 @@ public class CountDown : MonoBehaviour {
 
     IEnumerator LoseTime()
     {
-        while (true)
+        while (!gameEnded)
         {
             yield return new WaitForSeconds(1);
             timeLeft--;

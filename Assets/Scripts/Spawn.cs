@@ -15,6 +15,7 @@ public class Spawn : MonoBehaviour {
     private bool allowedPortal = true;
     private PlayerController playerScript;
     private CameraController cameraScript;
+    private CountDown countdown;
 
     void Start()
     {
@@ -24,6 +25,8 @@ public class Spawn : MonoBehaviour {
         playerScript = player.GetComponent<PlayerController>();
         GameObject camera = GameObject.Find("Main Camera");
         cameraScript = camera.GetComponent<CameraController>();
+        GameObject count = GameObject.Find("CountDown");
+        countdown = count.GetComponent<CountDown>();
     }
 
     void Update()
@@ -48,6 +51,7 @@ public class Spawn : MonoBehaviour {
 
     IEnumerator portal()
     {
+        countdown.gameEnded = true;
         allowedPortal = false;
         yield return new WaitForSeconds(1);
         cameraScript.active = false;

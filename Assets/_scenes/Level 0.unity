@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71dc24cb064ab94a92fcb4d2407a05b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxPicks: 0c00000008000000
+  maxPicks: 0c0000000800000000000000
   pickup: 0
 --- !u!1 &799543801
 GameObject:
@@ -925,7 +925,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbcbd560826d5d440bd1d9a911fd7b1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 10
+  timeLeft: 15
   countDownText: {fileID: 1201426093}
 --- !u!114 &1201426093
 MonoBehaviour:

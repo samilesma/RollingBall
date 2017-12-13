@@ -8,10 +8,7 @@ public class PlayerController : MonoBehaviour {
     public int forceConst = 5;
     public float speed=11;
 	public int jump = 5;
-    public Text countText;
-    public Text winText;
     public float maxSpeed=50;
-    public int count;
     public Renderer rend;
     public Rigidbody rb;
     public int level = 0;
@@ -26,8 +23,6 @@ public class PlayerController : MonoBehaviour {
     {
         rend = GetComponent<Renderer>();
         rb = GetComponent<Rigidbody>();
-        count = 0;
-        winText.text = "";
 
         GameObject portal = GameObject.Find("EndSpot");
         Spawn = portal.GetComponent<Spawn>();
@@ -56,7 +51,6 @@ public class PlayerController : MonoBehaviour {
         {
             other.gameObject.SetActive(false);
             Spawn.pickup++;
-            count++;
         }
     }
 
@@ -87,6 +81,5 @@ public class PlayerController : MonoBehaviour {
     public void reset()
     {
         Spawn.pickup = 0;
-        count = 0;
     }
 }
