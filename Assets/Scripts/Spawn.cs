@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Spawn : MonoBehaviour {
-    public int[] maxPicks = new int[] {12,8,0};
+    public int[] maxPicks = new int[] {12,8,5,3,4,3};
     public int pickup = 0;
 
     private Color colorStart = Color.red;

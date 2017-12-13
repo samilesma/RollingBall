@@ -12,6 +12,9 @@ public class PowerDown : MonoBehaviour {
     private Renderer rend;
     private Light light;
 
+    public AudioSource sound; //set in inspector    
+
+
     void Start () {
         rend = GetComponent<Renderer>();
         light = GameObject.Find("Directional Light").GetComponent<Light>();
@@ -49,6 +52,7 @@ public class PowerDown : MonoBehaviour {
                 powerDown.text = "Darkness";
                 light.intensity = 0.1f;
                 StartCoroutine(Delay(4));
+                sound.Play(); //play the coin sound
             }
             else if (power == Powers.Jumper)
             {
@@ -65,6 +69,7 @@ public class PowerDown : MonoBehaviour {
         Debug.Log("1");
         yield return new WaitForSeconds(delay);
         Debug.Log("2");
+        powerDown.text = "";
         if (power == Powers.SlowMotion) playerScript.speed = 11;
         else if (power == Powers.Speeder) playerScript.speed = 11;
         else if (power == Powers.SunShine) light.intensity = 1;
