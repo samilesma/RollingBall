@@ -12,20 +12,21 @@ public class PlayerController : MonoBehaviour {
     public Rigidbody rb;
     public int level = 0;
     private bool spacedown=false;
+    public Text pickUpCounter;
     private bool isGrounded = true;
     private bool isWalled = false;
     public string scene;
     public bool movement = true;
     private Spawn Spawn;
     public bool jumper = false;
-
+    private int pickUpsleft;
     private void Start()
     {
         rend = GetComponent<Renderer>();
         rb = GetComponent<Rigidbody>();
-
         GameObject portal = GameObject.Find("EndSpot");
         Spawn = portal.GetComponent<Spawn>();
+        pickUpsleft = Spawn.maxPicks[level];
     }
 
     private void FixedUpdate()
@@ -51,6 +52,7 @@ public class PlayerController : MonoBehaviour {
         {
             other.gameObject.SetActive(false);
             Spawn.pickup++;
+            pickUpsleft--;
         }
     }
 
@@ -72,6 +74,8 @@ public class PlayerController : MonoBehaviour {
 
     void Update()
     {
+        pickUpCounter.text = ("PickUp: " + pickUpsleft);
+
         if (Input.GetKeyDown(KeyCode.Space)) spacedown = true;
         else if(Input.GetKeyUp(KeyCode.Space)) spacedown = false;
 
