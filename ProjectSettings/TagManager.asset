@@ -10,6 +10,7 @@ TagManager:
   - player
   - Ball
   - Portal
+  - WallJump
   layers:
   - Default
   - TransparentFX
