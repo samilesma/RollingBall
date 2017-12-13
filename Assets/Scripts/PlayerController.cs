@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour {
     private bool isGrounded = true;
     public string scene;
     public bool movement = true;
-    private Portal portalScript;
+    private Spawn Spawn;
     public bool jumper = false;
 
     private void Start()
@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour {
         winText.text = "";
 
         GameObject portal = GameObject.Find("EndSpot");
-        portalScript = portal.GetComponent<Portal>();
+        Spawn = portal.GetComponent<Spawn>();
     }
 
     private void FixedUpdate()
@@ -55,7 +55,7 @@ public class PlayerController : MonoBehaviour {
         if(other.gameObject.CompareTag("Pick Up")) 
         {
             other.gameObject.SetActive(false);
-            portalScript.pickup++;
+            Spawn.pickup++;
             count++;
         }
     }
@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour {
 
     public void reset()
     {
-        portalScript.pickup = 0;
+        Spawn.pickup = 0;
         count = 0;
     }
 }

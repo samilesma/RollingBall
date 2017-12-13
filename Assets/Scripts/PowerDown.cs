@@ -6,15 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class PowerDown : MonoBehaviour {
     private PlayerController playerScript;
-    private Light lt;
-    public enum Powers {SlowMotion, Speeder, SunShine, Jumper, YouDead};
+    public enum Powers {SlowMotion, Speeder, SunShine, Darkness, Jumper, YouDead};
     public Powers power= Powers.SlowMotion;
     private Renderer rend;
+    private Light light;
 
     void Start () {
         rend = GetComponent<Renderer>();
-        lt = GetComponent<Light>();
-
+        light = GameObject.Find("Directional Light").GetComponent<Light>();
+        
         GameObject player = GameObject.Find("Player");
         playerScript = player.GetComponent<PlayerController>();
     }
@@ -37,7 +37,12 @@ public class PowerDown : MonoBehaviour {
             }
             else if (power == Powers.SunShine)
             {
-                lt.intensity = 10;
+                light.intensity = 10;
+                StartCoroutine(Delay(4));
+            }
+            else if (power == Powers.Darkness)
+            {
+                light.intensity = 0.1f;
                 StartCoroutine(Delay(4));
             }
             else if (power == Powers.Jumper)
@@ -56,7 +61,8 @@ public class PowerDown : MonoBehaviour {
         Debug.Log("2");
         if (power == Powers.SlowMotion) playerScript.speed = 11;
         else if (power == Powers.Speeder) playerScript.speed = 11;
-        else if (power == Powers.SunShine) lt.intensity = 1;
+        else if (power == Powers.SunShine) light.intensity = 1;
+        else if (power == Powers.Darkness) light.intensity = 1;
         else if (power == Powers.Jumper) playerScript.jumper = false;
     }
 }
