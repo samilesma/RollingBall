@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour {
-    public int forceConst = 5;
     public float speed=11;
 	public int jump = 5;
     public float maxSpeed=50;
@@ -14,6 +13,7 @@ public class PlayerController : MonoBehaviour {
     public int level = 0;
     private bool spacedown=false;
     private bool isGrounded = true;
+    private bool isWalled = false;
     public string scene;
     public bool movement = true;
     private Spawn Spawn;
@@ -42,7 +42,7 @@ public class PlayerController : MonoBehaviour {
         }
 
         if (GameObject.Find("Player").transform.position.y<-1) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        if((spacedown || jumper) && isGrounded) rb.AddForce(0, forceConst, 0, ForceMode.Impulse);
+        if((spacedown || jumper) && isGrounded) rb.AddForce(0, jump, 0, ForceMode.Impulse);
     }
 
     void OnTriggerEnter(Collider other)
