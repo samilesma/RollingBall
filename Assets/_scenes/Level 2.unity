@@ -641,6 +641,7 @@ MonoBehaviour:
   winText: {fileID: 0}
   maxSpeed: 11
   count: 0
+  rend: {fileID: 0}
   scene: 
 --- !u!23 &744594749
 MeshRenderer:
@@ -1613,7 +1614,7 @@ GameObject:
   - component: {fileID: 1561798781}
   m_Layer: 0
   m_Name: Wall-3
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1823,7 +1824,7 @@ GameObject:
   - component: {fileID: 1829364433}
   m_Layer: 0
   m_Name: Wall-2
-  m_TagString: Ground
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
