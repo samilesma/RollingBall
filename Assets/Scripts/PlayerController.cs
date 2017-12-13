@@ -64,6 +64,7 @@ public class PlayerController : MonoBehaviour {
             other.gameObject.SetActive(false);
             Spawn.pickup++;
             pickUpsleft--;
+            pickUpCounter.text = ("PickUp: " + pickUpsleft);
         }
     }
 
@@ -85,8 +86,6 @@ public class PlayerController : MonoBehaviour {
 
     void Update()
     {
-        pickUpCounter.text = ("PickUp: " + pickUpsleft);
-
         if (Input.GetKeyDown(KeyCode.Space)) spacedown = true;
         else if(Input.GetKeyUp(KeyCode.Space)) spacedown = false;
 
