@@ -346,7 +346,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   power: 3
-  powerDown: {fileID: 0}
+  powerDown: {fileID: 1252366514}
   sound: {fileID: 1107451107}
 --- !u!1001 &428337531
 Prefab:
