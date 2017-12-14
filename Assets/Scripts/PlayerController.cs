@@ -19,14 +19,25 @@ public class PlayerController : MonoBehaviour {
     public bool movement = true;
     private Spawn Spawn;
     public bool jumper = false;
-    private int pickUpsleft;
+    public int pickUpsleft;
+
+    public int getLevel()
+    {
+        return level;
+    }
+
+    public void setLevel()
+    {
+        level++;
+    }
+
     private void Start()
     {
         rend = GetComponent<Renderer>();
         rb = GetComponent<Rigidbody>();
         GameObject portal = GameObject.Find("EndSpot");
         Spawn = portal.GetComponent<Spawn>();
-        pickUpsleft = Spawn.maxPicks[level];
+        pickUpsleft = Spawn.maxPicks[getLevel()];
     }
 
     private void FixedUpdate()

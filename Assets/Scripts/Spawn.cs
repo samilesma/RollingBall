@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Spawn : MonoBehaviour {
-    public int[] maxPicks = new int[] {12,8,0};
+    public int[] maxPicks = new int[] {12,8,5,3,4,3};
     public int pickup = 0;
 
     private Color colorStart = Color.red;
@@ -33,7 +33,7 @@ public class Spawn : MonoBehaviour {
     {
         GameObject player = GameObject.Find("Player");
         PlayerController playerScript = player.GetComponent<PlayerController>();
-        if (pickup==maxPicks[playerScript.level])
+        if (pickup==maxPicks[playerScript.getLevel()])
         {
             float lerp = Mathf.PingPong(Time.time, duration) / duration;
             rend.material.color = Color.Lerp(colorStart, colorEnd, lerp);
@@ -57,15 +57,14 @@ public class Spawn : MonoBehaviour {
         cameraScript.active = false;
         playerScript.rb.AddForce(0, 100, 0, ForceMode.Impulse);
         yield return new WaitForSeconds(1);
-        playerScript.level++;
+        playerScript.setLevel();
         playerScript.reset();
-        SceneManager.LoadScene("Level " + playerScript.level);
-//        SceneManager.UnloadSceneAsync("Level " + (playerScript.level-1));
+        SceneManager.LoadScene("Level " + playerScript.getLevel());
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Player" && pickup == maxPicks[playerScript.level]) disco = true;
+        if (collision.gameObject.name == "Player" && pickup == maxPicks[playerScript.getLevel()]) disco = true;
     }
 
     void OnCollisionExit(Collision collision)
