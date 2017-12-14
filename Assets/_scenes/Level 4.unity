@@ -248,6 +248,21 @@ Prefab:
       propertyPath: m_Name
       value: Pickup (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 114702621474701120, guid: 62a8e27717797a042ad34c28fedd74b6,
+        type: 2}
+      propertyPath: x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114702621474701120, guid: 62a8e27717797a042ad34c28fedd74b6,
+        type: 2}
+      propertyPath: y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114702621474701120, guid: 62a8e27717797a042ad34c28fedd74b6,
+        type: 2}
+      propertyPath: z
+      value: 45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62a8e27717797a042ad34c28fedd74b6, type: 2}
   m_IsPrefabParent: 0
@@ -302,6 +317,21 @@ Prefab:
       propertyPath: m_Name
       value: Pickup (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 114702621474701120, guid: 62a8e27717797a042ad34c28fedd74b6,
+        type: 2}
+      propertyPath: x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114702621474701120, guid: 62a8e27717797a042ad34c28fedd74b6,
+        type: 2}
+      propertyPath: y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114702621474701120, guid: 62a8e27717797a042ad34c28fedd74b6,
+        type: 2}
+      propertyPath: z
+      value: 45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62a8e27717797a042ad34c28fedd74b6, type: 2}
   m_IsPrefabParent: 0
@@ -355,6 +385,21 @@ Prefab:
     - target: {fileID: 1315071149889352, guid: 62a8e27717797a042ad34c28fedd74b6, type: 2}
       propertyPath: m_Name
       value: Pickup (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114702621474701120, guid: 62a8e27717797a042ad34c28fedd74b6,
+        type: 2}
+      propertyPath: x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114702621474701120, guid: 62a8e27717797a042ad34c28fedd74b6,
+        type: 2}
+      propertyPath: y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114702621474701120, guid: 62a8e27717797a042ad34c28fedd74b6,
+        type: 2}
+      propertyPath: z
+      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62a8e27717797a042ad34c28fedd74b6, type: 2}
@@ -603,6 +648,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1244554304}
+  active: 1
 --- !u!1 &211693293
 GameObject:
   m_ObjectHideFlags: 0
@@ -742,6 +788,21 @@ Prefab:
     - target: {fileID: 1315071149889352, guid: 62a8e27717797a042ad34c28fedd74b6, type: 2}
       propertyPath: m_Name
       value: Pickup (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114702621474701120, guid: 62a8e27717797a042ad34c28fedd74b6,
+        type: 2}
+      propertyPath: x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114702621474701120, guid: 62a8e27717797a042ad34c28fedd74b6,
+        type: 2}
+      propertyPath: y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114702621474701120, guid: 62a8e27717797a042ad34c28fedd74b6,
+        type: 2}
+      propertyPath: z
+      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62a8e27717797a042ad34c28fedd74b6, type: 2}
@@ -885,6 +946,21 @@ Prefab:
     - target: {fileID: 1315071149889352, guid: 62a8e27717797a042ad34c28fedd74b6, type: 2}
       propertyPath: m_Name
       value: Pickup (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114702621474701120, guid: 62a8e27717797a042ad34c28fedd74b6,
+        type: 2}
+      propertyPath: x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114702621474701120, guid: 62a8e27717797a042ad34c28fedd74b6,
+        type: 2}
+      propertyPath: y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114702621474701120, guid: 62a8e27717797a042ad34c28fedd74b6,
+        type: 2}
+      propertyPath: z
+      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62a8e27717797a042ad34c28fedd74b6, type: 2}
@@ -1399,6 +1475,21 @@ Prefab:
     - target: {fileID: 1315071149889352, guid: 62a8e27717797a042ad34c28fedd74b6, type: 2}
       propertyPath: m_Name
       value: Pickup (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114702621474701120, guid: 62a8e27717797a042ad34c28fedd74b6,
+        type: 2}
+      propertyPath: x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114702621474701120, guid: 62a8e27717797a042ad34c28fedd74b6,
+        type: 2}
+      propertyPath: y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114702621474701120, guid: 62a8e27717797a042ad34c28fedd74b6,
+        type: 2}
+      propertyPath: z
+      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62a8e27717797a042ad34c28fedd74b6, type: 2}
@@ -2113,11 +2204,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e32b199a4990494daeed85771aefc7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forceConst: 5
   speed: 11
-  countText: {fileID: 0}
-  winText: {fileID: 0}
+  jump: 5
   maxSpeed: 5
+  rend: {fileID: 0}
+  rb: {fileID: 0}
+  level: 0
+  pickUpCounter: {fileID: 0}
+  scene: 
+  movement: 1
+  jumper: 0
 --- !u!23 &1244554308
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2611,6 +2707,21 @@ Prefab:
       propertyPath: m_Name
       value: Pickup (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 114702621474701120, guid: 62a8e27717797a042ad34c28fedd74b6,
+        type: 2}
+      propertyPath: x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114702621474701120, guid: 62a8e27717797a042ad34c28fedd74b6,
+        type: 2}
+      propertyPath: y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114702621474701120, guid: 62a8e27717797a042ad34c28fedd74b6,
+        type: 2}
+      propertyPath: z
+      value: 45
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62a8e27717797a042ad34c28fedd74b6, type: 2}
   m_IsPrefabParent: 0
@@ -2753,6 +2864,21 @@ Prefab:
     - target: {fileID: 1315071149889352, guid: 62a8e27717797a042ad34c28fedd74b6, type: 2}
       propertyPath: m_Name
       value: Pickup (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114702621474701120, guid: 62a8e27717797a042ad34c28fedd74b6,
+        type: 2}
+      propertyPath: x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 114702621474701120, guid: 62a8e27717797a042ad34c28fedd74b6,
+        type: 2}
+      propertyPath: y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114702621474701120, guid: 62a8e27717797a042ad34c28fedd74b6,
+        type: 2}
+      propertyPath: z
+      value: 45
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62a8e27717797a042ad34c28fedd74b6, type: 2}
