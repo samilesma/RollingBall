@@ -38,6 +38,7 @@ public class PlayerController : MonoBehaviour {
         GameObject portal = GameObject.Find("EndSpot");
         Spawn = portal.GetComponent<Spawn>();
         pickUpsleft = Spawn.maxPicks[getLevel()];
+        pickUpCounter.text = ("PickUp: " + pickUpsleft);
     }
 
     private void FixedUpdate()
