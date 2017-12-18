@@ -34,18 +34,22 @@ public class PowerDown : MonoBehaviour {
                 powerDown.text = "Slowmotion";
                 playerScript.speed = 1;
                 StartCoroutine(Delay(4));
+                sound.Play();
             }
             else if(power==Powers.Speeder)
             {
                 powerDown.text = "Speedster";
                 playerScript.speed = 30;
+                playerScript.maxSpeed = 30;
                 StartCoroutine(Delay(4));
+                sound.Play();
             }
             else if (power == Powers.SunShine)
             {
                 powerDown.text = "Sunshine";
-                light.intensity = 10;
+                light.intensity = 10.0f;
                 StartCoroutine(Delay(4));
+                sound.Play();
             }
             else if (power == Powers.Darkness)
             {
@@ -59,6 +63,7 @@ public class PowerDown : MonoBehaviour {
                 powerDown.text = "Jumper";
                 playerScript.jumper = true;
                 StartCoroutine(Delay(4));
+                sound.Play();
             }
             else if (power == Powers.YouDead) SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
@@ -71,7 +76,11 @@ public class PowerDown : MonoBehaviour {
         Debug.Log("2");
         powerDown.text = "";
         if (power == Powers.SlowMotion) playerScript.speed = 11;
-        else if (power == Powers.Speeder) playerScript.speed = 11;
+        else if (power == Powers.Speeder)
+        {
+            playerScript.speed = 11;
+            playerScript.maxSpeed = 11;
+        }
         else if (power == Powers.SunShine) light.intensity = 1;
         else if (power == Powers.Darkness) light.intensity = 1;
         else if (power == Powers.Jumper) playerScript.jumper = false;

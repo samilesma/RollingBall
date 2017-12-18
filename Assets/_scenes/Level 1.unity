@@ -326,6 +326,21 @@ Prefab:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 114702621474701120, guid: 62a8e27717797a042ad34c28fedd74b6,
+        type: 2}
+      propertyPath: x
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 114702621474701120, guid: 62a8e27717797a042ad34c28fedd74b6,
+        type: 2}
+      propertyPath: y
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114702621474701120, guid: 62a8e27717797a042ad34c28fedd74b6,
+        type: 2}
+      propertyPath: z
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 62a8e27717797a042ad34c28fedd74b6, type: 2}
   m_IsPrefabParent: 0
@@ -2416,7 +2431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbcbd560826d5d440bd1d9a911fd7b1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 15
+  timeLeft: 20
   countDownText: {fileID: 2104747338}
   gameEnded: 0
 --- !u!114 &2104747338
